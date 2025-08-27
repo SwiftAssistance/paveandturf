@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>About Us - Pave & Turf</title>
+    <meta name="description" content="Learn about Pave & Turf, your trusted partner for premium outdoor transformations. Discover our passion for craftsmanship, sustainability, and client satisfaction.">
+    <meta name="keywords" content="about Pave & Turf, outdoor transformations, paving, landscaping, sustainable design">
+    <meta name="author" content="Pave & Turf">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+
+    <!-- Inline CSS -->
+    <style>
+        :root {
+            --color-primary-dark: #004d40;
+            --color-primary-light: #008080;
+            --color-secondary-gray: #5d5d5d;
+            --color-accent-gold: #d4af37;
+            --color-background: #fdfdfd;
+            --color-text: #333;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Raleway', sans-serif;
+            --transition-fast: 0.3s ease;
+            --transition-slow: 0.6s ease;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        body::-webkit-scrollbar-thumb {
+            background: var(--color-primary-light);
+            border-radius: 4px;
+        }
+        body::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary-dark);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--color-primary-dark);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; }
+        h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 1.5rem; }
+        h3 { font-size: clamp(1.2rem, 2vw, 1.4rem); }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent-gold);
+            color: var(--color-primary-dark);
+            border: 2px solid var(--color-accent-gold);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-primary-dark);
+            transform: translateX(-100%);
+            transition: transform var(--transition-fast);
+            z-index: -1;
+        }
+
+        .btn-primary:hover {
+            color: white;
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(0);
+        }
+
+        .section-divider {
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+        }
+        
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-background);
+            clip-path: url(#wave);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--transition-slow), transform var(--transition-slow);
+        }
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .site-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: background-color var(--transition-fast), padding var(--transition-fast);
+        }
+
+        .site-header.scrolled {
+            position: fixed;
+            background-color: rgba(0, 77, 64, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .site-header.scrolled .logo { color: white; }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent-gold);
+            transition: width var(--transition-fast);
+        }
+
+        .main-nav a:hover::after, .main-nav a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/004d40/5d5d5d?text=About+Hero');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -2;
+        }
+        
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .hero h1 {
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 1rem 0 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .about-section {
+            padding: 4rem 0;
+            background-color: var(--color-background);
+        }
+        
+        .about-section .container {
+            text-align: center;
+        }
+
+        .about-detail {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .about-detail h3 {
+            margin-bottom: 0.8rem;
+        }
+
+        .about-detail p {
+            margin-bottom: 0.8rem;
+        }
+
+        .about-detail ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .about-detail img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 0.8rem 0;
+        }
+
+        .cta-section {
+            padding: 4rem 0;
+            background-color: var(--color-primary-light);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+        }
+
+        .cta-section p {
+            max-width: 500px;
+            margin: 0.8rem auto 1.5rem;
+        }
+
+        .site-footer {
+            background-color: var(--color-primary-dark);
+            color: rgba(255, 255, 255, 0.8);
+            padding-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding-bottom: 3rem;
+        }
+
+        .footer-column h4 {
+            color: white;
+            font-family: var(--font-heading);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 30px;
+            height: 2px;
+            background-color: var(--color-accent-gold);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-column a:hover {
+            color: var(--color-accent-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .social-links a {
+            font-size: 1.3rem;
+        }
+
+        .footer-form input, .footer-form textarea {
+            width: 100%;
+            padding: 0.6rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: white;
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-form input::placeholder, .footer-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-footer {
+            background: var(--color-accent-gold);
+            color: var(--color-primary-dark);
+            border: none;
+            width: 100%;
+            padding: 0.6rem;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        @media (min-width: 600px) {
+            .about-detail {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+            .about-detail .text-content {
+                grid-column: 1;
+            }
+            .about-detail img {
+                grid-column: 2;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .about-detail {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .main-nav {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--color-primary-dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: translateX(100%);
+                transition: transform 0.4s ease-in-out;
+            }
+
+            .main-nav.active {
+                transform: translateX(0);
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .main-nav a {
+                font-size: 1.4rem;
+            }
+
+            .menu-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .menu-toggle.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Pave & Turf</a>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-background"></div>
+            <canvas id="particle-canvas"></canvas>
+            <div class="hero-content container">
+                <h1>Who We Are at Pave & Turf</h1>
+                <p>Discover the passion and expertise behind our premium outdoor transformations. We craft spaces that inspire, built on quality and trust.</p>
+                <a href="#contact" class="btn btn-primary">Connect With Us</a>
+            </div>
+        </section>
+
+        <!-- Wave Divider -->
+        <div class="section-divider">
+            <svg width="0" height="0">
+              <defs>
+                <clipPath id="wave" clipPathUnits="objectBoundingBox">
+                  <path d="M0,0.5 C0.25,1, 0.75,0, 1,0.5 L1,1 L0,1 Z" />
+                </clipPath>
+              </defs>
+            </svg>
+        </div>
+
+        <!-- About Us Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2 class="fade-in">About Pave & Turf</h2>
+                
+                <!-- Our Story -->
+                <div class="about-detail fade-in" id="our-story">
+                    <div class="text-content">
+                        <h3>Our Story</h3>
+                        <p>At Pave & Turf, we’ve been transforming outdoor spaces into stunning, functional environments for over a decade. Founded with a vision to blend artistry with sustainability, our team is dedicated to delivering unparalleled craftsmanship in paving, landscaping, and garden design. Every project reflects our commitment to quality, innovation, and client satisfaction.</p>
+                        <p>From quaint urban gardens to expansive estate driveways, we approach each job with precision and passion, ensuring your outdoor space is both beautiful and enduring. Our reputation is built on trust, excellence, and a deep respect for the environment.</p>
+                        <ul>
+                            <li>Over 10 years of industry expertise</li>
+                            <li>Commitment to eco-friendly practices</li>
+                            <li>Client-first approach with personalized solutions</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Start Your Project</a>
+                    </div>
+                    <img src="https://placehold.co/600x400/004d40/fdfdfd?text=Our+Story" alt="Pave & Turf team at work" class="lazy" data-src="https://placehold.co/600x400/004d40/fdfdfd?text=Our+Story">
+                </div>
+
+                <!-- Our Values -->
+                <div class="about-detail fade-in" id="values">
+                    <div class="text-content">
+                        <h3>Our Core Values</h3>
+                        <p>We believe in creating outdoor spaces that not only enhance your property but also enrich your life. Our core values guide every project we undertake:</p>
+                        <ul>
+                            <li><strong>Excellence:</strong> Precision and quality in every detail, from material selection to final installation.</li>
+                            <li><strong>Sustainability:</strong> Eco-conscious designs that preserve natural resources and promote biodiversity.</li>
+                            <li><strong>Integrity:</strong> Transparent communication and honest pricing for complete client trust.</li>
+                            <li><strong>Innovation:</strong> Cutting-edge techniques and creative solutions tailored to your vision.</li>
+                        </ul>
+                        <p>These principles ensure that every Pave & Turf project is a masterpiece of function and form.</p>
+                        <a href="services.html" class="btn btn-primary">Explore Our Services</a>
+                    </div>
+                    <img src="https://placehold.co/600x400/008080/fdfdfd?text=Our+Values" alt="Sustainable landscaping example" class="lazy" data-src="https://placehold.co/600x400/008080/fdfdfd?text=Our+Values">
+                </div>
+
+                <!-- Our Commitment to Sustainability -->
+                <div class="about-detail fade-in" id="sustainability">
+                    <div class="text-content">
+                        <h3>Our Commitment to Sustainability</h3>
+                        <p>At Pave & Turf, sustainability is at the heart of our work. We design outdoor spaces that harmonize with nature, using eco-friendly materials and practices to minimize environmental impact. From permeable paving to native plant gardens, our solutions promote biodiversity and conserve resources.</p>
+                        <p>We partner with suppliers who share our commitment to sustainability, ensuring that every project contributes to a greener future. Let us create an outdoor space that’s as kind to the planet as it is beautiful.</p>
+                        <ul>
+                            <li>Permeable surfaces to reduce water runoff</li>
+                            <li>Native plants to support local ecosystems</li>
+                            <li>Efficient irrigation for water conservation</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary">Go Green With Us</a>
+                    </div>
+                    <img src="https://placehold.co/600x400/5d5d5d/fdfdfd?text=Sustainability" alt="Eco-friendly landscaping example" class="lazy" data-src="https://placehold.co/600x400/5d5d5d/fdfdfd?text=Sustainability">
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section fade-in">
+            <div class="container">
+                <h2>Transform Your Outdoors with Pave & Turf</h2>
+                <p>Ready to create your dream outdoor space? Partner with us for exceptional craftsmanship and personalized service.</p>
+                <a href="contact.html" class="btn btn-primary">Get Your Free Quote</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>About Pave & Turf</h4>
+                    <p>We craft stunning, sustainable outdoor spaces with unmatched quality and passion.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">F</a>
+                        <a href="#" aria-label="Instagram">I</a>
+                        <a href="#" aria-label="LinkedIn">L</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Get Your Quote</h4>
+                    <form class="footer-form">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="3" placeholder="Tell us about your project..."></textarea>
+                        <button type="submit" class="btn btn-footer">Send Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pave & Turf | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Inline JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Header Scroll Effect
+        const header = document.getElementById('site-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Hero Particle Animation
+        const canvas = document.getElementById('particle-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 1.5 + 0.5;
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.speedY = Math.random() * 1 + 0.2;
+                    this.opacity = Math.random() * 0.5 + 0.2;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.y > canvas.height) {
+                        this.y = 0 - this.size;
+                        this.x = Math.random() * canvas.width;
+                    }
+                }
+                draw() {
+                    ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function initParticles() {
+                const particleCount = window.innerWidth < 768 ? 35 : 70;
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+            initParticles();
+            window.addEventListener('resize', initParticles);
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+                requestAnimationFrame(animateParticles);
+            }
+            animateParticles();
+        }
+
+        // Intersection Observer for Scroll Animations
+        const animatedElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+
+        // Lazy Loading Images
+        const lazyImages = document.querySelectorAll('img.lazy');
+        const lazyObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    lazyObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => {
+            lazyObserver.observe(img);
+        });
+    });
+    </script>
+</body>
+</html>
