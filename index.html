@@ -705,6 +705,13 @@
             }
         }
 
+        /* Mobile specific fix for hero background */
+        @media (max-width: 768px) {
+            .hero-background {
+                background-attachment: scroll; /* Disables parallax on mobile for better performance and look */
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1144,4 +1151,5 @@
     </script>
 </body>
 </html>
+
 
