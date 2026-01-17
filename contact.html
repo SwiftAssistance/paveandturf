@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Meta Tags -->
-    <title>About EJM Pave & Turf | London's Premier Landscapers</title>
-    <meta name="description" content="Learn about EJM Pave & Turf, your trusted partner for premium outdoor transformations in London and Surrey. Discover our passion for craftsmanship, sustainability, and client satisfaction.">
-    <meta name="keywords" content="about EJM Pave & Turf, London landscapers, Surrey paving company, garden design experts, outdoor transformations">
+    <title>Contact EJM Pave & Turf | Get Your Free Consultation</title>
+    <meta name="description" content="Get in touch with EJM Pave & Turf for a free consultation. Contact us for premium paving, driveways, gardening, and landscaping services in London and Surrey.">
+    <meta name="keywords" content="contact Pave & Turf, free consultation, paving quote, landscaping quote London">
     <meta name="author" content="EJM Pave & Turf">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://paveandturf.co.uk/about.html">
+    <link rel="canonical" href="https://paveandturf.co.uk/contact.html">
 
-    <!-- Open Graph Meta Tags (for social sharing) -->
-    <meta property="og:title" content="About EJM Pave & Turf | London's Premier Landscapers">
-    <meta property="og:description" content="Discover the passion and expertise behind our premium outdoor transformations.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact EJM Pave & Turf">
+    <meta property="og:description" content="Get your free consultation today for premium outdoor transformations.">
     <meta property="og:image" content="https://paveandturf.co.uk/hero_background.webp">
-    <meta property="og:url" content="https://paveandturf.co.uk/about.html">
+    <meta property="og:url" content="https://paveandturf.co.uk/contact.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About EJM Pave & Turf | London's Premier Landscapers">
-    <meta name="twitter:description" content="Discover the passion and expertise behind our premium outdoor transformations.">
+    <meta name="twitter:title" content="Contact EJM Pave & Turf">
+    <meta name="twitter:description" content="Get your free consultation today for premium outdoor transformations.">
     <meta name="twitter:image" content="https://paveandturf.co.uk/hero_background.webp">
 
     <!-- Google Fonts -->
@@ -31,13 +31,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="favicon.ico">
-    
-    <!-- JSON-LD Structured Data for Local Business -->
+    <link rel="icon" href="pave_logo.webp" type="image/webp">
+
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -62,20 +58,17 @@
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-        ],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         "opens": "08:00",
         "closes": "18:00"
       },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61579588484773",
         "https://www.instagram.com/paveandturf"
-      ] 
+      ]
     }
     </script>
 
-    <!-- Inline CSS -->
     <style>
         :root {
             --color-primary-dark: #004d40;
@@ -125,7 +118,7 @@
             font-weight: 700;
             letter-spacing: 0.5px;
         }
-        
+
         h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; }
         h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; }
         h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
@@ -140,6 +133,8 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            border: none;
+            cursor: pointer;
         }
         .btn-primary {
             background-color: var(--color-accent-gold);
@@ -158,10 +153,9 @@
         .btn-primary:hover { color: white; }
         .btn-primary:hover::before { transform: translateX(0); }
 
-        /* Touch feedback for mobile devices */
+        /* Touch feedback for mobile */
         @media (hover: none) and (pointer: coarse) {
             .btn:active { transform: scale(0.97); }
-            .main-nav a:active { opacity: 0.7; }
         }
 
         .fade-in {
@@ -257,41 +251,75 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .about-section { padding: 6rem 0; }
-        .about-grid { display: grid; grid-template-columns: 1fr; gap: 5rem; }
-        .about-item { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
-        .about-item-image img {
-            width: 100%; height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            object-fit: cover;
-            aspect-ratio: 4 / 3;
-        }
-        .about-item-image .logo-image {
-            width: 50%; max-width: 250px;
-            height: auto; object-fit: contain;
-            aspect-ratio: 1 / 1;
-            margin: 0 auto; box-shadow: none;
-        }
-        .about-item-text h3 { margin-bottom: 1rem; }
-        .about-item-text p { margin-bottom: 1.5rem; }
-        .about-item-text ul { list-style: none; padding-left: 0; }
-        .about-item-text li { position: relative; padding-left: 25px; margin-bottom: 0.75rem; }
-        .about-item-text li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--color-primary-light);
-            font-weight: bold;
-        }
+        .contact-section { padding: 6rem 0; background-color: var(--color-background); }
+        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; margin-top: 3rem; }
 
         @media (min-width: 768px) {
-            .about-item { grid-template-columns: 1fr 1fr; }
-            .about-item:nth-child(even) .about-item-image { order: -1; }
+            .contact-grid { grid-template-columns: 1fr 1fr; }
         }
-        
-        .cta-section { padding: 6rem 0; background-color: #f4f8f7; text-align: center; }
-        .cta-section p { max-width: 600px; margin: 1rem auto 2rem; }
+
+        .contact-info { background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .contact-info h3 { margin-bottom: 2rem; }
+        .info-item { display: flex; align-items: flex-start; margin-bottom: 2rem; }
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        .info-icon svg { width: 20px; height: 20px; fill: white; }
+        .info-text h4 { color: var(--color-primary-dark); margin-bottom: 0.5rem; }
+        .info-text a { color: var(--color-text); text-decoration: none; transition: color 0.3s; }
+        .info-text a:hover { color: var(--color-primary-light); }
+
+        .contact-form { background: white; padding: 3rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .contact-form h3 { margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--color-primary-dark);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary-light);
+        }
+        .form-group textarea { resize: vertical; min-height: 150px; }
+
+        #form-result {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 5px;
+            display: none;
+            font-weight: 500;
+        }
+        #form-result.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        #form-result.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
 
         .site-footer {
             background-color: var(--color-primary-dark);
@@ -329,23 +357,7 @@
         .social-links a { color: rgba(255, 255, 255, 0.8); transition: color var(--transition-fast); }
         .social-links a:hover { color: white; }
         .social-links svg { width: 24px; height: 24px; fill: currentColor; }
-        #form-result { margin-top: 1rem; color: white; font-size: 0.9rem; transition: color 0.3s ease; }
-        .footer-form input, .footer-form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            color: white;
-            margin-bottom: 1rem;
-        }
-        .footer-form input::placeholder, .footer-form textarea::placeholder { color: rgba(255, 255, 255, 0.5); }
-        .btn-footer {
-            background: var(--color-accent-gold);
-            color: var(--color-primary-dark);
-            border: none; width: 100%;
-            padding: 0.75rem; cursor: pointer;
-        }
+
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
@@ -370,16 +382,12 @@
             .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
             .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
             .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-        }
-
-        @media (max-width: 768px) {
             .hero-background { background-attachment: scroll; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header class="site-header" id="site-header">
         <div class="header-container">
             <a href="index.html" class="logo">Pave & Turf</a>
@@ -387,9 +395,9 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
             <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
@@ -399,90 +407,103 @@
     </header>
 
     <main>
-
-        <!-- Hero Section -->
-        <section class="hero" id="about-hero">
+        <section class="hero">
             <div class="hero-background"></div>
             <canvas id="particle-canvas"></canvas>
             <div class="hero-content container">
-                <h1>Crafting London's Finest Outdoor Spaces</h1>
-                <p>Learn about the passion, precision, and principles that drive EJM Pave & Turf to deliver exceptional quality on every project.</p>
+                <h1>Get In Touch</h1>
+                <p>Ready to transform your outdoor space? Contact us today for a free consultation and let's bring your vision to life.</p>
             </div>
         </section>
 
-        <!-- About Us Section -->
-        <section class="about-section" id="about">
+        <section class="contact-section">
             <div class="container">
-                <div class="about-grid">
-                    
-                    <!-- Our Story -->
-                    <div class="about-item fade-in" id="our-story">
-                        <div class="about-item-text">
-                            <h3>Our Story</h3>
-                            <p>At Pave & Turf, we’ve been transforming outdoor spaces into stunning, functional environments for over a decade. Founded with a vision to blend artistry with sustainability, our team is dedicated to delivering unparalleled craftsmanship in paving, landscaping, and garden design. Every project reflects our commitment to quality, innovation, and client satisfaction.</p>
-                            <p>From quaint urban gardens to expansive estate driveways, we approach each job with precision and passion, ensuring your outdoor space is both beautiful and enduring. Our reputation is built on trust, excellence, and a deep respect for the environment.</p>
-                            <ul>
-                                <li>Over 10 years of industry expertise</li>
-                                <li>Commitment to eco-friendly practices</li>
-                                <li>Client-first approach with personalized solutions</li>
-                            </ul>
+                <h2 class="fade-in" style="text-align: center;">Contact EJM Pave & Turf</h2>
+                <div class="contact-grid">
+                    <div class="contact-info fade-in">
+                        <h3>Get In Touch</h3>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+                            </div>
+                            <div class="info-text">
+                                <h4>Phone</h4>
+                                <a href="tel:07828901958">07828 901958</a>
+                            </div>
                         </div>
-                        <div class="about-item-image">
-                            <img src="pave_logo.webp" alt="EJM Pave & Turf Logo" class="logo-image">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/></svg>
+                            </div>
+                            <div class="info-text">
+                                <h4>Service Areas</h4>
+                                <p>London, Surrey, Berkshire</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+                            </div>
+                            <div class="info-text">
+                                <h4>Opening Hours</h4>
+                                <p>Monday - Saturday: 8:00 AM - 6:00 PM</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/></svg>
+                            </div>
+                            <div class="info-text">
+                                <h4>Follow Us</h4>
+                                <div class="social-links" style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                                    <a href="https://www.facebook.com/profile.php?id=61579588484773" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                        <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.81C10.44 7.31 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 12 2.04z"/></svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/paveandturf" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                        <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Our Values -->
-                    <div class="about-item fade-in" id="values">
-                         <div class="about-item-text">
-                            <h3>Our Core Values</h3>
-                            <p>We believe in creating outdoor spaces that not only enhance your property but also enrich your life. Our core values guide every project we undertake:</p>
-                            <ul>
-                                <li><strong>Excellence:</strong> Precision and quality in every detail, from material selection to final installation.</li>
-                                <li><strong>Sustainability:</strong> Eco-conscious designs that preserve natural resources and promote biodiversity.</li>
-                                <li><strong>Integrity:</strong> Transparent communication and honest pricing for complete client trust.</li>
-                                <li><strong>Innovation:</strong> Cutting-edge techniques and creative solutions tailored to your vision.</li>
-                            </ul>
-                            <p>These principles ensure that every Pave & Turf project is a masterpiece of function and form.</p>
-                        </div>
-                        <div class="about-item-image">
-                            <img src="about_values.webp" alt="A close-up of perfectly laid herringbone paving, showcasing precision">
-                        </div>
-                    </div>
+                    <div class="contact-form fade-in">
+                        <h3>Send Us a Message</h3>
+                        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                            <input type="hidden" name="subject" value="New Contact Form Submission from EJM Pave & Turf">
 
-                    <!-- Our Commitment to Sustainability -->
-                    <div class="about-item fade-in" id="sustainability">
-                        <div class="about-item-text">
-                            <h3>Our Commitment to Sustainability</h3>
-                            <p>At Pave & Turf, sustainability is at the heart of our work. We design outdoor spaces that harmonize with nature, using eco-friendly materials and practices to minimize environmental impact. From permeable paving to native plant gardens, our solutions promote biodiversity and conserve resources.</p>
-                            <p>We partner with suppliers who share our commitment to sustainability, ensuring that every project contributes to a greener future. Let us create an outdoor space that’s as kind to the planet as it is beautiful.</p>
-                             <ul>
-                                <li>Permeable surfaces to reduce water runoff</li>
-                                <li>Native plants to support local ecosystems</li>
-                                <li>Efficient irrigation for water conservation</li>
-                            </ul>
-                        </div>
-                        <div class="about-item-image">
-                           <img src="about_sustainability.webp" alt="A beautiful garden with native, pollinator-friendly plants">
-                        </div>
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <div id="form-result"></div>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Call to Action Section -->
-        <section class="cta-section fade-in">
-            <div class="container">
-                <h2>Ready to Begin Your Transformation?</h2>
-                <p>Let EJM Pave & Turf bring your vision to life with our expert craftsmanship and commitment to quality. Contact us today for a no-obligation consultation.</p>
-                <a href="#contact" class="btn btn-primary">Get a Free Consultation</a>
-            </div>
-        </section>
-
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer" id="contact">
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -498,7 +519,7 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                 <div class="footer-column">
+                <div class="footer-column">
                     <h4>Contact Us</h4>
                     <ul>
                         <li><a href="tel:07828901958">07828 901958</a></li>
@@ -511,19 +532,9 @@
                             <svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.81C10.44 7.31 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 12 2.04z"/></svg>
                         </a>
                         <a href="https://www.instagram.com/paveandturf" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                           <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg>
+                            <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg>
                         </a>
                     </div>
-                </div>
-                <div class="footer-column">
-                    <h4>Get a Quote</h4>
-                    <form id="quote-form" action="https://api.web3forms.com/submit" method="POST" class="footer-form">
-                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                        <input type="email" name="email" placeholder="Your Email Address" required>
-                        <textarea name="message" rows="3" placeholder="Briefly describe your project..." required></textarea>
-                        <button type="submit" class="btn btn-footer">Send Inquiry</button>
-                    </form>
-                    <p id="form-result"></p>
                 </div>
             </div>
         </div>
@@ -532,17 +543,22 @@
         </div>
     </footer>
 
-    <!-- Inline JavaScript -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const header = document.getElementById('site-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { header.classList.add('scrolled'); } 
-            else { header.classList.remove('scrolled'); }
-        });
-
         const menuToggle = document.getElementById('menu-toggle');
         const mainNav = document.getElementById('main-nav');
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             mainNav.classList.toggle('active');
@@ -564,13 +580,19 @@
             }
         });
 
+        // Particle animation
         const canvas = document.getElementById('particle-canvas');
         if (canvas) {
             const ctx = canvas.getContext('2d');
             let particles = [];
-            function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
+
             class Particle {
                 constructor() {
                     this.x = Math.random() * canvas.width;
@@ -583,7 +605,10 @@
                 update() {
                     this.x += this.speedX;
                     this.y += this.speedY;
-                    if (this.y > canvas.height) { this.y = 0 - this.size; this.x = Math.random() * canvas.width; }
+                    if (this.y > canvas.height) {
+                        this.y = 0 - this.size;
+                        this.x = Math.random() * canvas.width;
+                    }
                 }
                 draw() {
                     ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
@@ -592,21 +617,29 @@
                     ctx.fill();
                 }
             }
+
             function initParticles() {
                 const particleCount = window.innerWidth < 768 ? 35 : 70;
                 particles = [];
-                for (let i = 0; i < particleCount; i++) { particles.push(new Particle()); }
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
             }
             initParticles();
             window.addEventListener('resize', initParticles);
+
             function animateParticles() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(p => { p.update(); p.draw(); });
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
                 requestAnimationFrame(animateParticles);
             }
             animateParticles();
         }
 
+        // Fade-in animations
         const animatedElements = document.querySelectorAll('.fade-in');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -616,45 +649,57 @@
                 }
             });
         }, { threshold: 0.1 });
-        animatedElements.forEach(el => { observer.observe(el); });
 
-        const form = document.getElementById('quote-form');
+        animatedElements.forEach(el => observer.observe(el));
+
+        // Form submission
+        const form = document.getElementById('contact-form');
         const result = document.getElementById('form-result');
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+
             const formData = new FormData(form);
             const object = {};
-            formData.forEach((value, key) => { object[key] = value; });
+            formData.forEach((value, key) => {
+                object[key] = value;
+            });
             const json = JSON.stringify(object);
+
             result.innerHTML = "Sending...";
             result.style.display = "block";
-            result.style.color = "white";
+            result.className = "";
+
             fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
                 body: json
             })
             .then(async (response) => {
                 let jsonResponse = await response.json();
                 if (response.status == 200) {
-                    result.innerHTML = "Form submitted successfully!";
-                    result.style.color = "#4CAF50";
+                    result.innerHTML = "Message sent successfully! We'll get back to you soon.";
+                    result.className = "success";
+                    form.reset();
                 } else {
-                    result.innerHTML = jsonResponse.message;
-                    result.style.color = "#f44336";
+                    result.innerHTML = jsonResponse.message || "Something went wrong. Please try again.";
+                    result.className = "error";
                 }
             })
             .catch(error => {
-                result.innerHTML = "Something went wrong!";
-                result.style.color = "#f44336";
+                result.innerHTML = "Something went wrong! Please try calling us instead.";
+                result.className = "error";
             })
             .then(function() {
-                form.reset();
-                setTimeout(() => { result.style.display = "none"; }, 5000);
+                setTimeout(() => {
+                    result.style.display = "none";
+                }, 5000);
             });
         });
     });
     </script>
 </body>
 </html>
-
