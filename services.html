@@ -522,6 +522,98 @@
             font-size: 0.9rem;
         }
 
+        /* Enhanced Footer Styles */
+        .footer-about p { margin-bottom: 1rem; line-height: 1.7; }
+        .footer-certifications { display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap; }
+        .cert-badge {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--color-accent-gold);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .footer-contact-list { list-style: none; }
+        .footer-contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .footer-icon { width: 20px; height: 20px; fill: var(--color-accent-gold); flex-shrink: 0; }
+        .footer-cta-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-footer-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.25rem;
+            background: var(--color-accent-gold);
+            color: var(--color-primary-dark);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-accent-gold);
+        }
+        .btn-footer-cta svg { width: 18px; height: 18px; fill: currentColor; }
+        .btn-footer-cta:hover {
+            background: transparent;
+            color: var(--color-accent-gold);
+            transform: translateY(-2px);
+        }
+        .btn-whatsapp { background: #25D366; border-color: #25D366; color: white; }
+        .btn-whatsapp:hover { background: transparent; color: #25D366; border-color: #25D366; }
+        .footer-newsletter p { margin-bottom: 1rem; font-size: 0.9rem; }
+        .footer-bottom-wrapper {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer-social h5 {
+            color: var(--color-accent-gold);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .social-link svg { width: 20px; height: 20px; fill: white; }
+        .social-link:hover {
+            background: var(--color-accent-gold);
+            transform: translateY(-3px);
+        }
+        .footer-bottom a { color: var(--color-accent-gold); text-decoration: none; }
+        .footer-bottom a:hover { text-decoration: underline; }
+
+        /* ------------------- */
+        /* --- Responsive Design --- */
+        /* ------------------- */
+        
+        /* Tablet View */
+
+        
+
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
             .main-nav {
@@ -550,7 +642,10 @@
 </head>
 <body>
 
-    <!-- Header -->
+    
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link" style="position: absolute; left: -9999px; z-index: 999;">Skip to main content</a>
+<!-- Header -->
     <header class="site-header" id="site-header">
         <div class="header-container">
             <a href="index.html" class="logo">Pave & Turf</a>
@@ -571,7 +666,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
 
         <!-- Hero Section -->
         <section class="hero" id="services-hero">
@@ -669,53 +764,105 @@
     </main>
 
     <!-- Footer -->
+    <!-- Enhanced Footer -->
     <footer class="site-footer" id="contact">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h4>About EJM</h4>
-                    <p>We are dedicated to crafting luxurious, sustainable outdoor transformations with an unwavering commitment to quality and client satisfaction.</p>
+                <!-- About Column -->
+                <div class="footer-column footer-about">
+                    <h4>EJM Pave & Turf</h4>
+                    <p>Transforming outdoor spaces across London, Surrey, and Berkshire with expert craftsmanship, sustainable practices, and uncompromising attention to detail.</p>
+                    <div class="footer-certifications">
+                        <span class="cert-badge" title="Over 10 years of excellence">10+ Years</span>
+                        <span class="cert-badge" title="Eco-Friendly Materials">Eco-Friendly</span>
+                    </div>
                 </div>
+
+                <!-- Quick Links -->
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="index.html#projects">Gallery</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#projects">Gallery</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                 <div class="footer-column">
-                    <h4>Contact Us</h4>
+
+                <!-- Services Column -->
+                <div class="footer-column">
+                    <h4>Our Services</h4>
                     <ul>
-                        <li><a href="tel:07828901958">07828 901958</a></li>
+                        <li><a href="#services">Bespoke Paving</a></li>
+                        <li><a href="#services">Driveway Installation</a></li>
+                        <li><a href="#services">Natural Gardening</a></li>
+                        <li><a href="#services">Custom Landscapes</a></li>
+                        <li><a href="#services">Artificial Turf</a></li>
                     </ul>
                 </div>
+
+                <!-- Contact Column -->
                 <div class="footer-column">
-                    <h4>Connect With Us</h4>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61579588484773" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.81C10.44 7.31 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 12 2.04z"/></svg>
+                    <h4>Get In Touch</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" class="footer-icon" aria-hidden="true"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+                            <a href="tel:07828901958">07828 901958</a>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" class="footer-icon" aria-hidden="true"><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/></svg>
+                            <span>London, Surrey, Berkshire</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" class="footer-icon" aria-hidden="true"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+                            <span>Mon-Sat: 8AM-6PM</span>
+                        </li>
+                    </ul>
+                    <div class="footer-cta-buttons">
+                        <a href="tel:07828901958" class="btn-footer-cta" aria-label="Call us now">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+                            Call Now
                         </a>
-                        <a href="https://www.instagram.com/paveandturf" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                           <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg>
+                        <a href="https://wa.me/447828901958" target="_blank" rel="noopener noreferrer" class="btn-footer-cta btn-whatsapp" aria-label="Message us on WhatsApp">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            WhatsApp
                         </a>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h4>Get a Quote</h4>
+
+                <!-- Newsletter Column -->
+                <div class="footer-column footer-newsletter">
+                    <h4>Get a Free Quote</h4>
+                    <p>Ready to transform your space? Get in touch today!</p>
                     <form id="quote-form" action="https://api.web3forms.com/submit" method="POST" class="footer-form">
                         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                        <input type="email" name="email" placeholder="Your Email Address" required>
-                        <textarea name="message" rows="3" placeholder="Briefly describe your project..." required></textarea>
-                        <button type="submit" class="btn btn-footer">Send Inquiry</button>
+                        <input type="hidden" name="subject" value="New Quote Request - EJM Pave & Turf">
+                        <input type="email" name="email" placeholder="Your Email" required aria-label="Email address">
+                        <textarea name="message" rows="2" placeholder="Tell us about your project..." required aria-label="Project description"></textarea>
+                        <button type="submit" class="btn btn-footer" aria-label="Submit quote request">Get Quote</button>
                     </form>
-                    <p id="form-result"></p>
+                    <p id="form-result" role="status" aria-live="polite"></p>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 EJM Pave & Turf | All Rights Reserved</p>
+
+            <!-- Social & Bottom Bar -->
+            <div class="footer-bottom-wrapper">
+                <div class="footer-social">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61579588484773" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" class="social-link">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.81C10.44 7.31 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 12 2.04z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/paveandturf" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" class="social-link">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 EJM Pave & Turf. All Rights Reserved. | <a href="#" aria-label="Privacy Policy">Privacy Policy</a></p>
+                </div>
+            </div>
         </div>
     </footer>
 
