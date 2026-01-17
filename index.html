@@ -10,20 +10,20 @@
     <meta name="keywords" content="paving London, driveway installation, gardening services, landscaping Surrey, artificial turf Windsor, bespoke patios Ascot, luxury outdoors, EJM Pave & Turf">
     <meta name="author" content="EJM Pave & Turf">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.yourwebsite.com/index.html">
+    <link rel="canonical" href="https://paveandturf.co.uk/index.html">
 
     <!-- Open Graph Meta Tags (for social sharing) -->
     <meta property="og:title" content="EJM Pave & Turf - Premier Outdoor Transformations">
     <meta property="og:description" content="Expert craftsmanship in paving, driveways, gardening, and landscaping for unparalleled elegance.">
-    <meta property="og:image" content="https://www.yourwebsite.com/hero_background.webp">
-    <meta property="og:url" content="https://www.yourwebsite.com">
+    <meta property="og:image" content="https://paveandturf.co.uk/hero_background.webp">
+    <meta property="og:url" content="https://paveandturf.co.uk">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="EJM Pave & Turf - Premier Outdoor Transformations">
     <meta name="twitter:description" content="Expert craftsmanship in paving, driveways, gardening, and landscaping for unparalleled elegance.">
-    <meta name="twitter:image" content="https://www.yourwebsite.com/hero_background.webp">
+    <meta name="twitter:image" content="https://paveandturf.co.uk/hero_background.webp">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,9 +39,9 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "EJM Pave & Turf",
-      "image": "https://www.yourwebsite.com/pave_logo.webp",
-      "@id": "",
-      "url": "https://www.yourwebsite.com",
+      "image": "https://paveandturf.co.uk/pave_logo.webp",
+      "@id": "https://paveandturf.co.uk",
+      "url": "https://paveandturf.co.uk",
       "telephone": "07828 901958",
       "description": "Premier paving and landscaping services in London, Surrey, and Berkshire.",
       "address": {
@@ -202,6 +202,16 @@
             transform: translateX(0);
         }
 
+        /* Touch feedback for mobile devices */
+        @media (hover: none) and (pointer: coarse) {
+            .btn:active {
+                transform: scale(0.97);
+            }
+            .main-nav a:active {
+                opacity: 0.7;
+            }
+        }
+
         .section-divider {
             position: relative;
             height: 100px;
@@ -324,13 +334,14 @@
         /* ------------------- */
         .hero {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             overflow: hidden;
+            padding: 8rem 0 4rem;
         }
 
         .hero-background {
@@ -970,6 +981,22 @@
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             mainNav.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && mainNav.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            }
         });
 
         // --- Hero Particle Animation ---

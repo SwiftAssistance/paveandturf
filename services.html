@@ -10,20 +10,20 @@
     <meta name="keywords" content="paving services, driveway contractors, garden design London, landscape architecture Surrey, artificial turf installation, patio builders">
     <meta name="author" content="EJM Pave & Turf">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.yourwebsite.com/services.html">
+    <link rel="canonical" href="https://paveandturf.co.uk/services.html">
 
     <!-- Open Graph Meta Tags (for social sharing) -->
     <meta property="og:title" content="Our Services - EJM Pave & Turf">
     <meta property="og:description" content="Discover our expert services in bespoke paving, driveways, gardening, and landscaping.">
-    <meta property="og:image" content="https://www.yourwebsite.com/hero_background.webp">
-    <meta property="og:url" content="https://www.yourwebsite.com/services.html">
+    <meta property="og:image" content="https://paveandturf.co.uk/hero_background.webp">
+    <meta property="og:url" content="https://paveandturf.co.uk/services.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Our Services - EJM Pave & Turf">
     <meta name="twitter:description" content="Discover our expert services in bespoke paving, driveways, gardening, and landscaping.">
-    <meta name="twitter:image" content="https://www.yourwebsite.com/hero_background.webp">
+    <meta name="twitter:image" content="https://paveandturf.co.uk/hero_background.webp">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,9 +39,9 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "EJM Pave & Turf",
-      "image": "https://www.yourwebsite.com/pave_logo.webp",
-      "@id": "",
-      "url": "https://www.yourwebsite.com",
+      "image": "https://paveandturf.co.uk/pave_logo.webp",
+      "@id": "https://paveandturf.co.uk",
+      "url": "https://paveandturf.co.uk",
       "telephone": "07828 901958",
       "description": "Premier paving and landscaping services in London, Surrey, and Berkshire.",
       "address": {
@@ -191,7 +191,13 @@
         .btn-primary:hover::before {
             transform: translateX(0);
         }
-        
+
+        /* Touch feedback for mobile devices */
+        @media (hover: none) and (pointer: coarse) {
+            .btn:active { transform: scale(0.97); }
+            .main-nav a:active { opacity: 0.7; }
+        }
+
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -284,13 +290,14 @@
 
         .hero {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             overflow: hidden;
+            padding: 8rem 0 4rem;
         }
 
         .hero-background {
@@ -593,7 +600,7 @@
                         <a href="#contact" class="btn btn-primary">Plan Your Project</a>
                     </div>
                     <div class="service-item-image">
-                        <img src="service_paving.webp" alt="A beautifully paved stone patio">
+                        <img src="project_driveway.webp" alt="A beautifully paved stone patio">
                     </div>
                 </div>
 
@@ -610,7 +617,7 @@
                         <a href="#contact" class="btn btn-primary">Get a Driveway Quote</a>
                     </div>
                      <div class="service-item-image">
-                        <img src="service_driveway.webp" alt="A modern and clean driveway installation">
+                        <img src="project_driveway.webp" alt="A modern and clean driveway installation">
                     </div>
                 </div>
 
@@ -627,7 +634,7 @@
                         <a href="#contact" class="btn btn-primary">Design Your Garden</a>
                     </div>
                      <div class="service-item-image">
-                        <img src="service_garden.webp" alt="A lush and well-maintained natural garden">
+                        <img src="project_garden.webp" alt="A lush and well-maintained natural garden">
                     </div>
                 </div>
 
@@ -644,7 +651,7 @@
                         <a href="#contact" class="btn btn-primary">Create Your Oasis</a>
                     </div>
                     <div class="service-item-image">
-                        <img src="service_landscape.webp" alt="A custom landscape with artificial turf and a patio">
+                        <img src="project_poolside.webp" alt="A custom landscape with artificial turf and a patio">
                     </div>
                 </div>
             </div>
@@ -729,6 +736,22 @@
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             mainNav.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && mainNav.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            }
         });
 
         // --- Hero Particle Animation ---
