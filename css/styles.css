@@ -1028,3 +1028,261 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
         padding: 3rem 1.5rem;
     }
 }
+
+/* ------------------- */
+/* --- Services Page Styles --- */
+/* ------------------- */
+.services-detail-section {
+    padding: 6rem 0;
+    background-color: var(--color-background);
+}
+
+.service-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    align-items: center;
+}
+
+.service-item:last-child {
+    margin-bottom: 0;
+}
+
+.service-item-text h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.service-item-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--color-secondary-gray);
+}
+
+.service-item-text ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.service-item-text ul li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    color: var(--color-secondary-gray);
+}
+
+.service-item-text ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-gold);
+    font-weight: bold;
+}
+
+.service-item-image {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 77, 64, 0.1);
+}
+
+.service-item-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ------------------- */
+/* --- About Page Styles --- */
+/* ------------------- */
+.about-section {
+    padding: 6rem 0;
+    background-color: var(--color-background);
+}
+
+.about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.about-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-item-text h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.about-item-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--color-secondary-gray);
+}
+
+.about-item-text ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.about-item-text ul li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    color: var(--color-secondary-gray);
+}
+
+.about-item-text ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-gold);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.about-item-image {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 77, 64, 0.1);
+}
+
+.about-item-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.about-item-image img.logo-image {
+    max-height: 200px;
+    object-fit: contain;
+    padding: 2rem;
+    background: white;
+}
+
+/* ------------------- */
+/* --- Team Section --- */
+/* ------------------- */
+.team-section {
+    padding: 6rem 0;
+    background: #f4f8f7;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.team-member {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 77, 64, 0.08);
+}
+
+.team-member h4 {
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.team-member .role {
+    color: var(--color-accent-gold);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.team-member p {
+    color: var(--color-secondary-gray);
+    line-height: 1.6;
+}
+
+/* ------------------- */
+/* --- Responsive Design for Services & About --- */
+/* ------------------- */
+
+/* Tablet */
+@media (min-width: 768px) {
+    .service-item,
+    .about-item {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Alternate layout for visual interest */
+    .service-item:nth-child(even) .service-item-image,
+    .about-item:nth-child(even) .about-item-image {
+        order: -1;
+    }
+
+    .service-item-image img,
+    .about-item-image img {
+        max-height: 450px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    .service-item,
+    .about-item {
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .service-item-image img,
+    .about-item-image img {
+        max-height: 500px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile Optimization */
+@media (max-width: 767px) {
+    .services-detail-section,
+    .about-section {
+        padding: 3rem 0;
+    }
+
+    .service-item,
+    .about-item {
+        margin-bottom: 3rem;
+        gap: 2rem;
+    }
+
+    .service-item-image img,
+    .about-item-image img {
+        max-height: 250px;
+    }
+
+    .about-item-image img.logo-image {
+        max-height: 150px;
+        padding: 1.5rem;
+    }
+
+    .service-item-text h3,
+    .about-item-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .team-section {
+        padding: 3rem 0;
+    }
+}
