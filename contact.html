@@ -158,34 +158,103 @@
                     </div>
 
                     <div class="contact-form fade-in">
-                        <h3>Send Us a Message</h3>
+                        <h3>Request Your Free Consultation</h3>
+                        <p style="color: var(--color-secondary-gray); margin-bottom: 2rem;">Fill out the form below and we'll get back to you within 24 hours.</p>
+
                         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
                             <input type="hidden" name="subject" value="New Contact Form Submission from PAVE & TURF">
+                            <input type="hidden" name="from_name" value="PAVE & TURF Website">
 
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" required>
+                            <!-- Personal Information -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" placeholder="John Smith" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="07XXX XXXXXX" required>
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
+                                <label for="postcode">Postcode / Area *</label>
+                                <input type="text" id="postcode" name="postcode" placeholder="SW1A 0AA" required>
+                            </div>
+
+                            <!-- Project Details -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="service">Service Interested In *</label>
+                                    <select id="service" name="service" required>
+                                        <option value="">Select a service...</option>
+                                        <option value="Bespoke Paving">Bespoke Paving</option>
+                                        <option value="Driveway Installation">Driveway Installation</option>
+                                        <option value="Natural Gardening">Natural Gardening</option>
+                                        <option value="Custom Landscapes">Custom Landscapes</option>
+                                        <option value="Artificial Turf">Artificial Turf</option>
+                                        <option value="Garden Maintenance">Garden Maintenance</option>
+                                        <option value="Multiple Services">Multiple Services</option>
+                                        <option value="Not Sure">Not Sure - Need Advice</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="budget">Estimated Budget</label>
+                                    <select id="budget" name="budget">
+                                        <option value="">Select budget range...</option>
+                                        <option value="Under £5,000">Under £5,000</option>
+                                        <option value="£5,000 - £10,000">£5,000 - £10,000</option>
+                                        <option value="£10,000 - £20,000">£10,000 - £20,000</option>
+                                        <option value="£20,000 - £50,000">£20,000 - £50,000</option>
+                                        <option value="Over £50,000">Over £50,000</option>
+                                        <option value="Not Sure">Not Sure</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="message">Your Message *</label>
-                                <textarea id="message" name="message" required></textarea>
+                                <label for="timeline">When would you like to start?</label>
+                                <select id="timeline" name="timeline">
+                                    <option value="">Select timeframe...</option>
+                                    <option value="As soon as possible">As soon as possible</option>
+                                    <option value="Within 1 month">Within 1 month</option>
+                                    <option value="1-3 months">1-3 months</option>
+                                    <option value="3-6 months">3-6 months</option>
+                                    <option value="6+ months">6+ months</option>
+                                    <option value="Just exploring options">Just exploring options</option>
+                                </select>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <div class="form-group">
+                                <label for="message">Project Details *</label>
+                                <textarea id="message" name="message" placeholder="Tell us about your project... What area needs work? Any specific requirements or vision you have?" required></textarea>
+                            </div>
+
+                            <!-- Consent -->
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <label for="consent">I agree to be contacted by PAVE & TURF regarding my enquiry. We respect your privacy and will never share your information.</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <span>Send Enquiry</span>
+                            </button>
+
                             <div id="form-result"></div>
                         </form>
+
+                        <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: var(--color-secondary-gray);">
+                            Prefer to call? <a href="tel:07828901958" style="color: var(--color-accent-gold); font-weight: 600;">07828 901958</a><br>
+                            Or message us on <a href="https://wa.me/447828901958" target="_blank" style="color: #25D366; font-weight: 600;">WhatsApp</a>
+                        </p>
                     </div>
                 </div>
             </div>

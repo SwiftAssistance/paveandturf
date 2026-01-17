@@ -161,54 +161,76 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // --- Web3Forms Submission ---
-    const form = document.getElementById('quote-form');
-    const result = document.getElementById('form-result');
+    // Handle both quote-form and contact-form
+    const forms = ['quote-form', 'contact-form'];
 
-    if (form && result) {
-        form.addEventListener('submit', function(e) {
-            const formData = new FormData(form);
-            const object = {};
-            formData.forEach((value, key) => {
-                object[key] = value;
-            });
-            const json = JSON.stringify(object);
-            result.innerHTML = "Sending...";
-            result.style.display = "block";
-            result.style.color = "white";
+    forms.forEach(formId => {
+        const form = document.getElementById(formId);
+        const result = document.getElementById('form-result');
 
-            e.preventDefault();
+        if (form && result) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
 
-            fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: json
-                })
-                .then(async (response) => {
-                    let jsonResponse = await response.json();
-                    if (response.status == 200) {
-                        result.innerHTML = "Form submitted successfully!";
-                        result.style.color = "#4CAF50";
-                    } else {
-                        console.log(response);
-                        result.innerHTML = jsonResponse.message;
-                        result.style.color = "#f44336";
-                    }
-                })
-                .catch(error => {
-                    console.log(error);
-                    result.innerHTML = "Something went wrong!";
-                    result.style.color = "#f44336";
-                })
-                .then(function() {
-                    form.reset();
-                    setTimeout(() => {
-                        result.style.display = "none";
-                    }, 5000);
+                const formData = new FormData(form);
+                const object = {};
+                formData.forEach((value, key) => {
+                    object[key] = value;
                 });
-        });
-    }
+                const json = JSON.stringify(object);
+
+                // Show loading state
+                result.innerHTML = "Sending your enquiry...";
+                result.style.display = "block";
+                result.className = "";
+
+                // Disable submit button
+                const submitBtn = form.querySelector('button[type="submit"]');
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<span>Sending...</span>';
+                }
+
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let jsonResponse = await response.json();
+                        if (response.status == 200) {
+                            result.innerHTML = "✓ Thank you! We'll get back to you within 24 hours.";
+                            result.className = "success";
+                            form.reset();
+                        } else {
+                            console.log(response);
+                            result.innerHTML = "✗ " + (jsonResponse.message || "Something went wrong. Please try again.");
+                            result.className = "error";
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        result.innerHTML = "✗ Network error. Please check your connection and try again.";
+                        result.className = "error";
+                    })
+                    .finally(() => {
+                        // Re-enable submit button
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = '<span>Send Enquiry</span>';
+                        }
+
+                        // Hide result after 8 seconds
+                        setTimeout(() => {
+                            result.style.display = "none";
+                            result.className = "";
+                        }, 8000);
+                    });
+            });
+        }
+    });
 
 });
