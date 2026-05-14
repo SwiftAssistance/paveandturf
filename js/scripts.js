@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function initParticles() {
-            const particleCount = window.innerWidth < 768 ? 30 : 60;
+            const particleCount = window.innerWidth < 768 ? 55 : 120;
             particles = [];
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new Particle());
