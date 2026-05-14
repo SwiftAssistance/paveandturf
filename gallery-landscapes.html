@@ -3,30 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Gallery - Pave & Turf</title>
-    <meta name="description" content="Browse Pave & Turf's project galleries by category: paving, driveways, gardening, and custom landscapes across London, Surrey, and Berkshire.">
-    <meta name="keywords" content="Pave & Turf gallery, outdoor transformations, paving, driveways, landscaping, gardens">
+    <title>Landscapes Gallery - Pave & Turf</title>
+    <meta name="description" content="Browse Pave & Turf's landscape projects: full outdoor transformations combining paving, turf, planting, and bespoke outdoor living features.">
+    <meta name="keywords" content="landscape gallery, outdoor transformation, artificial turf, bespoke garden, outdoor living, Pave & Turf">
     <meta name="author" content="Pave & Turf">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Favicon -->
     <link rel="icon" href="images/pave_logo.webp" type="image/webp">
-
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    
-    <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link" style="position: absolute; left: -9999px; z-index: 999;">Skip to main content</a>
-<!-- Header -->
+
     <header class="site-header" id="site-header">
         <div class="header-container">
             <a href="index.html" class="logo">Pave & Turf</a>
@@ -57,100 +48,105 @@
 
     <main id="main-content">
 
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-background"></div>
-            <div class="hero-content container">
-                <h1>Our Work</h1>
-                <p>A selection of recent projects across London, Surrey, and Berkshire.</p>
-                <a href="#contact" class="btn btn-primary">Start Your Project</a>
+        <!-- Page Banner -->
+        <section class="page-banner">
+            <div class="container">
+                <h1>Landscapes Gallery</h1>
+                <p>Full outdoor transformations combining paving, turf, planting, and bespoke outdoor living features.</p>
+                <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
             </div>
         </section>
 
-        <!-- Gallery Hub Section -->
-        <section class="gallery-hub-section" id="gallery">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
             <div class="container">
-                <h2 class="fade-in">Browse by Category</h2>
-                <p class="fade-in" style="max-width: 600px; margin: 0 auto 0;">Select a category below to see our full portfolio of work in that area.</p>
-                <div class="gallery-categories-grid">
+                <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="breadcrumb-sep">/</span>
+                    <a href="gallery.html">Gallery</a>
+                    <span class="breadcrumb-sep">/</span>
+                    <span>Landscapes</span>
+                </nav>
+            </div>
+        </div>
 
-                    <a href="gallery-paving.html" class="gallery-category-card fade-in">
-                        <div class="card-image-wrap">
-                            <img src="data:image/svg+xml,%3Csvg xmlns=’http://www.w3.org/2000/svg’ viewBox=’0 0 800 600’%3E%3Crect fill=’%23f0f0f0’ width=’800’ height=’600’/%3E%3C/svg%3E"
-                                 data-src="images/gallery_herringbone.webp"
-                                 alt="Paving projects by Pave & Turf"
-                                 class="lazy" loading="lazy">
-                        </div>
-                        <div class="category-card-content">
-                            <h3>Paving</h3>
-                            <p>Patios, pathways, and poolside surfaces in natural stone, porcelain, and block paving.</p>
-                            <span class="category-link">View Gallery &rarr;</span>
-                        </div>
-                    </a>
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <div class="gallery-grid">
 
-                    <a href="gallery-driveways.html" class="gallery-category-card fade-in">
-                        <div class="card-image-wrap">
-                            <img src="data:image/svg+xml,%3Csvg xmlns=’http://www.w3.org/2000/svg’ viewBox=’0 0 800 600’%3E%3Crect fill=’%23f0f0f0’ width=’800’ height=’600’/%3E%3C/svg%3E"
-                                 data-src="images/gallery_blockpaving.webp"
-                                 alt="Driveway projects by Pave & Turf"
-                                 class="lazy" loading="lazy">
-                        </div>
-                        <div class="category-card-content">
-                            <h3>Driveways</h3>
-                            <p>Block paving, resin-bound, and natural stone driveways that transform your home’s kerb appeal.</p>
-                            <span class="category-link">View Gallery &rarr;</span>
-                        </div>
-                    </a>
+                    <div class="gallery-item fade-in">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f0f0f0' width='800' height='600'/%3E%3C/svg%3E"
+                             data-src="images/gallery_outdoorliving.webp"
+                             alt="Bespoke outdoor living space"
+                             class="lazy" loading="lazy">
+                        <h4>Bespoke Outdoor Living Space</h4>
+                        <p>Custom designed outdoor living area with premium artificial turf in Virginia Water, Surrey.</p>
+                    </div>
 
-                    <a href="gallery-gardening.html" class="gallery-category-card fade-in">
-                        <div class="card-image-wrap">
-                            <img src="data:image/svg+xml,%3Csvg xmlns=’http://www.w3.org/2000/svg’ viewBox=’0 0 800 600’%3E%3Crect fill=’%23f0f0f0’ width=’800’ height=’600’/%3E%3C/svg%3E"
-                                 data-src="images/gallery_lawn.webp"
-                                 alt="Gardening projects by Pave & Turf"
-                                 class="lazy" loading="lazy">
-                        </div>
-                        <div class="category-card-content">
-                            <h3>Gardening</h3>
-                            <p>Manicured lawns, native planting schemes, and garden designs built to thrive in the local climate.</p>
-                            <span class="category-link">View Gallery &rarr;</span>
-                        </div>
-                    </a>
+                    <div class="gallery-item fade-in">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f0f0f0' width='800' height='600'/%3E%3C/svg%3E"
+                             data-src="images/gallery_landscape_complete.webp"
+                             alt="Complete garden transformation"
+                             class="lazy" loading="lazy">
+                        <h4>Complete Garden Transformation</h4>
+                        <p>Full landscape redesign integrating paving, planting, and lighting in Barnes, London.</p>
+                    </div>
 
-                    <a href="gallery-landscapes.html" class="gallery-category-card fade-in">
-                        <div class="card-image-wrap">
-                            <img src="data:image/svg+xml,%3Csvg xmlns=’http://www.w3.org/2000/svg’ viewBox=’0 0 800 600’%3E%3Crect fill=’%23f0f0f0’ width=’800’ height=’600’/%3E%3C/svg%3E"
-                                 data-src="images/gallery_outdoorliving.webp"
-                                 alt="Landscape projects by Pave & Turf"
-                                 class="lazy" loading="lazy">
-                        </div>
-                        <div class="category-card-content">
-                            <h3>Landscapes</h3>
-                            <p>Full outdoor transformations combining paving, turf, planting, and bespoke outdoor living features.</p>
-                            <span class="category-link">View Gallery &rarr;</span>
-                        </div>
-                    </a>
+                    <div class="gallery-item fade-in">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f0f0f0' width='800' height='600'/%3E%3C/svg%3E"
+                             data-src="images/gallery_landscape_turf.webp"
+                             alt="Artificial turf and paving combination"
+                             class="lazy" loading="lazy">
+                        <h4>Artificial Turf & Paving</h4>
+                        <p>Premium artificial turf with porcelain paving surround and built-in edging in Epsom, Surrey.</p>
+                    </div>
+
+                    <div class="gallery-item fade-in">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f0f0f0' width='800' height='600'/%3E%3C/svg%3E"
+                             data-src="images/gallery_landscape_water.webp"
+                             alt="Water feature garden landscape"
+                             class="lazy" loading="lazy">
+                        <h4>Water Feature Garden</h4>
+                        <p>Serene water feature with surrounding landscape, planting, and lighting in Weybridge, Surrey.</p>
+                    </div>
+
+                    <div class="gallery-item fade-in">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f0f0f0' width='800' height='600'/%3E%3C/svg%3E"
+                             data-src="images/gallery_landscape_entertaining.webp"
+                             alt="Garden entertaining area"
+                             class="lazy" loading="lazy">
+                        <h4>Garden Entertaining Area</h4>
+                        <p>Large entertaining terrace with outdoor kitchen area and built-in seating in Richmond, Surrey.</p>
+                    </div>
+
+                    <div class="gallery-item fade-in">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%23f0f0f0' width='800' height='600'/%3E%3C/svg%3E"
+                             data-src="images/gallery_landscape_front.webp"
+                             alt="Front garden landscape"
+                             class="lazy" loading="lazy">
+                        <h4>Front Garden Landscape</h4>
+                        <p>Cohesive front garden design combining driveway, planting, and boundary features in Windsor, Berkshire.</p>
+                    </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- Call to Action Section -->
+        <!-- CTA Section -->
         <section class="cta-section fade-in">
             <div class="container">
-                <h2>Inspired by Our Work?</h2>
-                <p>Let Pave & Turf transform your outdoor space into a masterpiece. Contact us today for a free consultation!</p>
+                <h2>Have a Bigger Project in Mind?</h2>
+                <p>We combine paving, turf, planting, and outdoor features into one cohesive space. Let's talk.</p>
                 <a href="contact.html" class="btn btn-primary">Get Your Free Quote</a>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-        <!-- Enhanced Footer -->
     <footer class="site-footer" id="contact">
         <div class="container">
             <div class="footer-content">
-                <!-- About Column -->
                 <div class="footer-column footer-about">
                     <h4>PAVE & TURF</h4>
                     <p>Transforming outdoor spaces across London, Surrey, and Berkshire with expert craftsmanship, sustainable practices, and uncompromising attention to detail.</p>
@@ -159,8 +155,6 @@
                         <span class="cert-badge" title="Fully Insured">Fully Insured</span>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul>
@@ -171,20 +165,15 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Services Column -->
                 <div class="footer-column">
-                    <h4>Our Services</h4>
+                    <h4>Gallery</h4>
                     <ul>
-                        <li><a href="services.html">Bespoke Paving</a></li>
-                        <li><a href="services.html">Driveway Installation</a></li>
-                        <li><a href="services.html">Natural Gardening</a></li>
-                        <li><a href="services.html">Custom Landscapes</a></li>
-                        <li><a href="services.html">Artificial Turf</a></li>
+                        <li><a href="gallery-paving.html">Paving</a></li>
+                        <li><a href="gallery-driveways.html">Driveways</a></li>
+                        <li><a href="gallery-gardening.html">Gardening</a></li>
+                        <li><a href="gallery-landscapes.html">Landscapes</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Column -->
                 <div class="footer-column">
                     <h4>Get In Touch</h4>
                     <ul class="footer-contact-list">
@@ -213,8 +202,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Social & Bottom Bar -->
             <div class="footer-bottom-wrapper">
                 <div class="footer-social">
                     <h5>Follow Us</h5>
@@ -234,7 +221,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="js/scripts.js"></script>
 </body>
 </html>
