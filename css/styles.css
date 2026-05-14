@@ -80,7 +80,33 @@ h1, h2, h3 {
 }
 
 h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; }
-h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; }
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-accent-gold), var(--color-primary-light));
+    border-radius: 2px;
+}
+.services-section .container h2,
+.projects-section .container h2,
+.testimonials-section .container h2 {
+    display: block;
+}
+.services-section .container h2::after,
+.projects-section .container h2::after,
+.testimonials-section .container h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
 h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 
 .btn {
@@ -313,6 +339,50 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 }
 
 /* ------------------- */
+/* --- Trust Stats Strip --- */
+/* ------------------- */
+.trust-strip {
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary-light));
+    padding: 2.5rem 0;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.trust-number {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--color-accent-gold);
+    line-height: 1;
+}
+
+.trust-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (min-width: 600px) {
+    .trust-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ------------------- */
 /* --- Services Section --- */
 /* ------------------- */
 .services-section {
@@ -334,21 +404,47 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 
 .service-card {
     background: white;
-    padding: 2rem 1.5rem; /* Reduced padding */
+    padding: 2rem 1.5rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
     border-image: linear-gradient(to right, var(--color-primary-light), var(--color-accent-gold)) 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-primary-light), var(--color-accent-gold));
+    transform: scaleX(0);
+    transition: transform var(--transition-fast);
+    transform-origin: left;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 77, 64, 0.15);
+}
+
+.service-card:hover::after {
+    transform: scaleX(1);
 }
 
 .service-icon {
     margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(0, 77, 64, 0.08), rgba(0, 128, 128, 0.08));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--color-primary-dark);
 }
 
@@ -390,11 +486,30 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
     text-align: center;
 }
 
+.testimonial-stars {
+    font-size: 1.3rem;
+    color: var(--color-accent-gold);
+    letter-spacing: 3px;
+    margin-bottom: 1.25rem;
+}
+
 .testimonial-quote {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-style: italic;
     margin-bottom: 1.5rem;
     color: var(--color-secondary-gray);
+    line-height: 1.7;
+}
+
+.testimonial-quote::before {
+    content: '\201C';
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-accent-gold);
+    line-height: 0;
+    vertical-align: -0.6rem;
+    margin-right: 0.2rem;
+    opacity: 0.6;
 }
 
 .testimonial-author {
