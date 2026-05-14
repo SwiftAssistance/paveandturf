@@ -54,21 +54,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.size = Math.random() * 1.5 + 0.5;
                 this.speedX = Math.random() * 1 - 0.5;
                 this.speedY = Math.random() * 1 + 0.2;
-                this.opacity = Math.random() * 0.5 + 0.2;
+                this.opacity = Math.random() * 0.6 + 0.3;
+                this.twinkleSpeed = Math.random() * 0.02 + 0.005;
+                this.twinkleOffset = Math.random() * Math.PI * 2;
             }
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
+                this.twinkleOffset += this.twinkleSpeed;
                 if (this.y > canvas.height) {
                     this.y = 0 - this.size;
                     this.x = Math.random() * canvas.width;
                 }
             }
             draw() {
-                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                const pulse = Math.sin(this.twinkleOffset) * 0.25 + 0.75;
+                const alpha = this.opacity * pulse;
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.9)';
+                ctx.shadowBlur = this.size * 6;
+                ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
+                ctx.shadowBlur = 0;
             }
         }
 
