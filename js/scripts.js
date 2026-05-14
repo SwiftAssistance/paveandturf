@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.5;
-                this.speedX = Math.random() * 0.4 - 0.2;
+                this.size = Math.random() * 1.8 + 0.6;
+                this.speedX = Math.random() * 0.3 - 0.15;
                 this.speedY = Math.random() * 0.3 - 0.15;
-                this.opacity = Math.random() * 0.4 + 0.2;
+                this.opacity = Math.random() * 0.4 + 0.55;
                 this.twinkleSpeed = Math.random() * 0.02 + 0.005;
                 this.twinkleOffset = Math.random() * Math.PI * 2;
             }
@@ -68,10 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (this.y > canvas.height + this.size) this.y = -this.size;
             }
             draw() {
-                const pulse = Math.sin(this.twinkleOffset) * 0.25 + 0.75;
+                const pulse = Math.sin(this.twinkleOffset) * 0.45 + 0.55;
                 const alpha = this.opacity * pulse;
                 ctx.shadowColor = 'rgba(255, 255, 255, 0.9)';
-                ctx.shadowBlur = this.size * 4;
+                ctx.shadowBlur = this.size * 10;
                 ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
