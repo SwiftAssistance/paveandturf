@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 + 0.2;
-                this.opacity = Math.random() * 0.35 + 0.65;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speedX = Math.random() * 0.4 - 0.2;
+                this.speedY = Math.random() * 0.3 - 0.15;
+                this.opacity = Math.random() * 0.4 + 0.2;
                 this.twinkleSpeed = Math.random() * 0.02 + 0.005;
                 this.twinkleOffset = Math.random() * Math.PI * 2;
             }
@@ -62,16 +62,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.x += this.speedX;
                 this.y += this.speedY;
                 this.twinkleOffset += this.twinkleSpeed;
-                if (this.y > canvas.height) {
-                    this.y = 0 - this.size;
-                    this.x = Math.random() * canvas.width;
-                }
+                if (this.x < -this.size) this.x = canvas.width + this.size;
+                if (this.x > canvas.width + this.size) this.x = -this.size;
+                if (this.y < -this.size) this.y = canvas.height + this.size;
+                if (this.y > canvas.height + this.size) this.y = -this.size;
             }
             draw() {
                 const pulse = Math.sin(this.twinkleOffset) * 0.25 + 0.75;
                 const alpha = this.opacity * pulse;
                 ctx.shadowColor = 'rgba(255, 255, 255, 0.9)';
-                ctx.shadowBlur = this.size * 18;
+                ctx.shadowBlur = this.size * 4;
                 ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function initParticles() {
-            const particleCount = window.innerWidth < 768 ? 90 : 180;
+            const particleCount = window.innerWidth < 768 ? 30 : 60;
             particles = [];
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new Particle());
