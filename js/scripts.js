@@ -49,31 +49,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
         class Particle {
             constructor() {
+                this.reset(true);
+            }
+            reset(randomY) {
                 this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.5;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 + 0.2;
-                this.opacity = Math.random() * 0.5 + 0.2;
+                this.y = randomY ? Math.random() * canvas.height : 0 - Math.random() * 20;
+                // mix of tiny dots and larger bright flares
+                this.size = Math.random() < 0.25 ? Math.random() * 2.5 + 1.5 : Math.random() * 1.2 + 0.4;
+                this.speedX = Math.random() * 0.8 - 0.4;
+                this.speedY = Math.random() * 0.9 + 0.3;
+                this.opacity = Math.random() * 0.5 + 0.5;
+                // twinkle: each particle cycles opacity at its own rate
+                this.twinkleSpeed = Math.random() * 0.03 + 0.01;
+                this.twinkleOffset = Math.random() * Math.PI * 2;
+                this.age = 0;
             }
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-                if (this.y > canvas.height) {
-                    this.y = 0 - this.size;
-                    this.x = Math.random() * canvas.width;
+                this.age++;
+                this.opacity = 0.5 + 0.5 * Math.sin(this.age * this.twinkleSpeed + this.twinkleOffset);
+                if (this.y > canvas.height + this.size) {
+                    this.reset(false);
                 }
             }
             draw() {
-                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                // soft glow halo
+                ctx.shadowBlur = this.size > 1.5 ? 12 : 6;
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.9)';
+                ctx.fillStyle = this.size > 1.5 ? 'rgba(255, 255, 255, 1)' : 'rgba(220, 230, 255, 1)';
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
+                // bright core on larger sparkles
+                if (this.size > 1.5) {
+                    ctx.shadowBlur = 4;
+                    ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size * 0.4, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.restore();
             }
         }
 
         function initParticles() {
-            const particleCount = window.innerWidth < 768 ? 35 : 70;
+            const particleCount = window.innerWidth < 768 ? 80 : 160;
             particles = [];
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new Particle());
@@ -81,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         initParticles();
         window.addEventListener('resize', initParticles);
-
 
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
