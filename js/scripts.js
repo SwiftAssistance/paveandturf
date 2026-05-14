@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.5;
+                this.size = Math.random() * 3 + 1;
                 this.speedX = Math.random() * 1 - 0.5;
                 this.speedY = Math.random() * 1 + 0.2;
-                this.opacity = Math.random() * 0.6 + 0.3;
+                this.opacity = Math.random() * 0.35 + 0.65;
                 this.twinkleSpeed = Math.random() * 0.02 + 0.005;
                 this.twinkleOffset = Math.random() * Math.PI * 2;
             }
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const pulse = Math.sin(this.twinkleOffset) * 0.25 + 0.75;
                 const alpha = this.opacity * pulse;
                 ctx.shadowColor = 'rgba(255, 255, 255, 0.9)';
-                ctx.shadowBlur = this.size * 6;
+                ctx.shadowBlur = this.size * 18;
                 ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function initParticles() {
-            const particleCount = window.innerWidth < 768 ? 35 : 70;
+            const particleCount = window.innerWidth < 768 ? 90 : 180;
             particles = [];
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new Particle());
@@ -240,5 +240,28 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+
+    // --- Gallery Category Filter ---
+    const filterBtns = document.querySelectorAll('.gallery-filter');
+    if (filterBtns.length) {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        function applyFilter(filter) {
+            galleryItems.forEach(item => {
+                const show = filter === 'all' ? item.classList.contains('cat-all') : item.classList.contains('cat-' + filter);
+                item.style.display = show ? '' : 'none';
+            });
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                applyFilter(btn.dataset.filter);
+            });
+        });
+
+        applyFilter('all');
+    }
 
 });
