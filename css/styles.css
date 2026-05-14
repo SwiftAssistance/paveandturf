@@ -290,24 +290,20 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
     padding: 8rem 0 4rem;
 }
 
-.hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-}
-
 .hero-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero_background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax effect */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    z-index: -2;
 }
 
 #particle-canvas {
@@ -800,9 +796,12 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
     }
 }
 
-/* Mobile specific fix for hero video */
+/* Mobile specific fix for hero background */
 @media (max-width: 768px) {
-    .hero-video {
+    .hero-background {
+        background-attachment: scroll; /* Disables parallax on mobile for better performance and look */
+        background-size: cover;
+        image-rendering: auto;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         transform: translateZ(0);
@@ -1654,26 +1653,12 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 /* --- Gallery Sub-page Banner --- */
 /* ------------------- */
 .page-banner {
-    position: relative;
-    overflow: hidden;
     padding: 10rem 0 5rem;
+    background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('../images/hero_background.webp');
+    background-size: cover;
+    background-position: center;
     text-align: center;
     color: white;
-}
-
-.page-banner .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 0;
-}
-
-.page-banner .container {
-    position: relative;
-    z-index: 1;
 }
 
 .page-banner h1 {
