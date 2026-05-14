@@ -76,21 +76,28 @@ document.addEventListener('DOMContentLoaded', function() {
             draw() {
                 ctx.save();
                 ctx.globalAlpha = this.opacity;
-                // soft glow halo
-                ctx.shadowBlur = this.size > 1.5 ? 12 : 6;
-                ctx.shadowColor = 'rgba(255, 255, 255, 0.9)';
-                ctx.fillStyle = this.size > 1.5 ? 'rgba(255, 255, 255, 1)' : 'rgba(220, 230, 255, 1)';
+                ctx.shadowBlur = this.size > 1.5 ? 18 : 8;
+                ctx.shadowColor = 'rgba(255, 255, 255, 1)';
+                ctx.strokeStyle = 'rgba(255, 255, 255, 1)';
+                ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+                const s = this.size;
+                // 4-pointed star (cross of two thin diamonds)
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.moveTo(this.x, this.y - s * 3);
+                ctx.lineTo(this.x + s * 0.4, this.y - s * 0.4);
+                ctx.lineTo(this.x + s * 3, this.y);
+                ctx.lineTo(this.x + s * 0.4, this.y + s * 0.4);
+                ctx.lineTo(this.x, this.y + s * 3);
+                ctx.lineTo(this.x - s * 0.4, this.y + s * 0.4);
+                ctx.lineTo(this.x - s * 3, this.y);
+                ctx.lineTo(this.x - s * 0.4, this.y - s * 0.4);
+                ctx.closePath();
                 ctx.fill();
-                // bright core on larger sparkles
-                if (this.size > 1.5) {
-                    ctx.shadowBlur = 4;
-                    ctx.fillStyle = 'rgba(255, 255, 255, 1)';
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size * 0.4, 0, Math.PI * 2);
-                    ctx.fill();
-                }
+                // bright centre dot
+                ctx.shadowBlur = 6;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, s * 0.5, 0, Math.PI * 2);
+                ctx.fill();
                 ctx.restore();
             }
         }
