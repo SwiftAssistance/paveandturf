@@ -335,27 +335,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Gallery Category Filter ---
-    const filterBtns = document.querySelectorAll('.gallery-filter');
-    if (filterBtns.length) {
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        function applyFilter(filter) {
-            galleryItems.forEach(item => {
-                const show = filter === 'all' ? item.classList.contains('cat-all') : item.classList.contains('cat-' + filter);
-                item.style.display = show ? '' : 'none';
-            });
-        }
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                applyFilter(btn.dataset.filter);
-            });
-        });
-
-        applyFilter('all');
-    }
 
 });
