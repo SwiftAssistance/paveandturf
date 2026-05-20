@@ -1307,7 +1307,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
     }
 }
 
-/* Desktop — brickwork layout */
+/* Desktop */
 @media (min-width: 992px) {
     .contact-grid {
         grid-template-columns: 1fr 1.5fr;
@@ -1315,14 +1315,12 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 
     .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 380px 300px;
         gap: 1rem;
     }
 
-    /* Brickwork: wide left, narrow right, narrow left, wide right, wide left, narrow right */
-    .gallery-grid .gallery-item:nth-child(1) { grid-column: span 2; }
-    .gallery-grid .gallery-item:nth-child(4) { grid-column: span 2; }
-    .gallery-grid .gallery-item { height: auto; }
+    .gallery-grid .gallery-item {
+        height: 320px;
+    }
 
 }
 
