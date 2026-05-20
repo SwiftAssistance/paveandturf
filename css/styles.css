@@ -1212,17 +1212,18 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
     font-weight: bold;
 }
 
-.service-item-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+.service-item-image {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 77, 64, 0.1);
 }
 
-.service-item-icon img {
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
+.service-item-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
     display: block;
 }
 
@@ -1353,11 +1354,12 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
     }
 
     /* Alternate layout for visual interest */
-    .service-item:nth-child(even) .service-item-icon,
+    .service-item:nth-child(even) .service-item-image,
     .about-item:nth-child(even) .about-item-image {
         order: -1;
     }
 
+    .service-item-image img,
     .about-item-image img {
         max-height: 450px;
     }
@@ -1374,6 +1376,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
         grid-template-columns: 1.2fr 1fr;
     }
 
+    .service-item-image img,
     .about-item-image img {
         max-height: 500px;
     }
@@ -1396,13 +1399,9 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
         gap: 2rem;
     }
 
+    .service-item-image img,
     .about-item-image img {
         max-height: 250px;
-    }
-
-    .service-item-icon img {
-        width: 130px;
-        height: 130px;
     }
 
     .about-item-image img.logo-image {
